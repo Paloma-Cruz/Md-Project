@@ -1,0 +1,10 @@
+Estória de usuário
+
+- Eu, como responsável pelo salão, quero ter uma plataforma para agendamento e controle das finanças do salão.
+- Eu, como responsável pelo salão, quero cadastrar os funcionários para poder controlar a agenda e lucro de cada um.
+- Eu, como responsável pelo salão, quero cadastrar serviços prestados para poder vincular na agenda.
+- Eu, como responsável pelo salão. quero agendar um horário no salão para a organização do mesmo.
+- Eu, como responsável pelo salão, quero visualizar o histórico de agenda para estar ciente de agendamentos passados.
+- Eu, como responsável pelo salão, quero saber quanto cada funcionário recebeu no final do dia para ter métricas de quem está faturando mais.
+- Eu, como responsável pelo salão, quero visualizar através de um dashboard os lucros do salão por período e por funcionário também.
+- Eu, como funcionário do salão, quero visualizar minha agenda de trabalho e filtrá-la por período.

@@ -1,0 +1,15 @@
+Levantamento dos requisitos técnicos
+
+- O sistema deve permitir cadastrar os funcionários, inserindo o nome, telefone e email e informando se tem acesso ou não à todos os dados da plataforma.
+- O sistema deve permitir excluir um funcionário.
+- O sistema deve permitir que todos os funcionários ativos visualizem sua agenda.
+- O sistema deve permitir cadastrar serviços prestados, inserindo o nome do serviço e o valor.
+- O sistema deve permitir vincular serviços prestados aos funcionários.
+- O sistema deve permitir excluir serviços prestados.
+- O sistema deve permitir agendar um horário, inserindo a data e hora, o nome da cliente, o serviço prestado(quando selecionar o serviço prestado, já trazer o preço), podendo editar o preço.
+- Quando inserir o serviço prestado no agendamento, trazer todos os funcionários que tem aquele serviço prestado vinculado ao seu cadastro.
+- O sistema deve permitir editar ou excluir um agendamento. 
+- O sistema deve alertar uma tentativa de agendar um mesmo horário para um mesmo funcionário. Deve informar que naquele horário o funcionário já estará ocupado.
+- O sistema deve permitir visualizar o histórico de agenda de cada funcionário.
+- O sistema deve retornar no final do dia o lucro de cada funcionário do salão.
+- O sistema deve retornar o lucro através de um dashboard por período e por funcionário.
