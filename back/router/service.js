@@ -22,7 +22,7 @@ router.post('/create', async(req, res) => {
         const service = await Service.create(req.body);
         return res.send(service);
     } catch (error) {
-        return res.send({ error: 'Erro na conexão com o servidor!' });
+        return res.send({ error: 'Erro ao cadastrar ou buscar serviço!' });
     }
 });
 
