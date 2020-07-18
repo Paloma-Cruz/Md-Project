@@ -6,7 +6,7 @@ const ScheduleSchema = new Schema({
     data: { type: Date, required: true },
     services_ref: { required: true }, // reference
     employee_ref: { required: true }, // reference
-    price: { type: Float64Array, required: true },
+    price: { type: parseFloat, required: true },
     excluded: { type: Boolean },
     create: { type: Date, default: Date.now }
 });

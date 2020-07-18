@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../model/user');
+const bcrypt = require('bcrypt');
 
 router.get('/', async (req, res) => {
     try {
@@ -12,11 +13,11 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/create', async (req, res) => {
-    const { email, password, name, phone, super_admin, excluded } = req.body;
-    if(!email || !name ) return res.send({ message: 'Dados insuficientes! '});
+    const { email, name, phone, super_admin } = req.body;
+    if(!email || !name ) return res.send({ error: 'Dados insuficientes! '});
     
     try {
-        if(await User.findOne({email})) return res.send({ message: 'Usuário já cadastrado! '});
+        if(await User.findOne({email})) return res.send({ error: 'Usuário já cadastrado! '});
 
         if(!phone) req.body.phone = null;
 
@@ -29,6 +30,24 @@ router.post('/create', async (req, res) => {
         return res.send(user);
     } catch (error) {
         return res.send({ error: 'Erro ao cadastrar ou buscar usuário!' });
+    }
+});
+
+router.post('/auth', async (req, res) => {
+    const { email, password } = req.body;
+    if(!email || !password) return res.send({ error: 'Dados insuficientes!'});
+
+    try {
+        const user = await User.findOne({email}).select('+password');
+        if(!user) return res.send({ error: 'Usuário não cadastrado!' });
+        
+        const pass_ok = await bcrypt.compare(password, user.password);
+        if(!pass_ok) return res.send({ error: 'Erro ao autenticar usuário' });
+
+        user.password = undefined;
+        return res.send({ message: 'Permissão liberada!' });
+    } catch (error) {
+        return res.send({ error: "Erro na conexão com o servidor!" });
     }
 });
 

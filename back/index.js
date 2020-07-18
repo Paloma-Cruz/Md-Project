@@ -26,9 +26,11 @@ app.use(bodyParser.json());
 
 const indexRoute = require('./router/index');
 const userRoute = require('./router/user');
+const serviceRoute = require('./router/service');
 
 app.use('/', indexRoute);
 app.use('/user', userRoute);
+app.use('/service', serviceRoute);
 
 app.listen(8000);
 console.log('Api rodando na porta 8000');
